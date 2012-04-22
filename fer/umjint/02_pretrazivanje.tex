@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+
+\usepackage{cmap}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\title{Pretraživanje prostora stanja}
+
+\section{Pretraživanje prostora stanja}
+
+\subsection{Opis problema}
+
+Neformalno rečeno, krenuvši iz početnog stanja želimo pronaći put do konačnog.
+
+Sa $S$ označimo skup svih stanja (to još nazivamo i prostor stanja). Neka nam
+$s_0 \in S$ označava početno stanje. Skup konačnih stanja (ciljeve) nećemo
+definirati eksplicitno, nego preko funkcije $goal : S \rightarrow \lbrace \top,
+\bot \rbrace$. Kako bismo znali u koja sve stanja možemo prijeći iz nekog
+stanja, definirat ćemo i funkciju prijelaza (sljedbenika) kao $succ : S
+\rightarrow \wp(S)$, s time da skup sljedbenika ne mora biti eksplicitno
+vraćen, nego može biti i iterator. Dodatno
+
+Problem pretraživanja stanja svede se na problem pretraživanja \textbf{
+usmjerenog grafa} (digrafa - directed graph). Vrhovi grafa nam predstavljaju
+stanja, a lukovi (bridovi) prijelaze. Ako prijelazi imaju cijene, koristit ćemo
+\textbf{usmjeren težinski graf}. \textbf{Stablo pretraživanja} gradimo tako da
+se, krenuvši iz prvog čvora, nekom \textbf{strategijom pretraživanja} proširimo
+u sve njemu susjedne. \textbf{Otvorenim čvorovima (frontom)} nazivamo one koje
+smo generirali, ali još nismo proširili, dok su \textbf{zatvoreni čvorovi} oni
+koji su već prošireni. Kako ćemo se proširiti u sva susjedna stanja, bez obzira
+jesmo li stanja već posjetili, stablo pretraživanje bit će beskonačno ako graf
+sadrži cikluse. 
+
+\textbf{Čvor} ćemo definirati kao podatkovnu strukturu koja pohranjuje stanje
+i još neke podatke (npr. dubinu). 
+
+
+\end{document}

@@ -24,4 +24,5 @@
 *.vrb
 *.maf
 *.mtc
-*.mtc0
+*.mtC0
+*.bak
